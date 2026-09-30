@@ -152,6 +152,6 @@ document.querySelectorAll('.filter-button').forEach(filter => {
 
 document.getElementById('contact-form')?.addEventListener('submit', event => {
   event.preventDefault();
-  document.getElementById('form-note').textContent = 'Este mockup no envía datos. Completa el canal de contacto antes de publicar.';
+  document.getElementById('form-note').textContent = 'El formulario todavía no está conectado. Para una consulta inmediata, usa WhatsApp.';
 });
 
