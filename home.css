@@ -1,0 +1,335 @@
+body[data-page="inicio"] {
+  --home-black: #090a09;
+  --home-dark: #11110f;
+  --home-cream: #f4ebdd;
+  --home-paper: #fbf7ef;
+  --home-gold: #f4c62d;
+  --home-amber: #d69c1e;
+  --home-white: #fffdf7;
+  --home-muted: #8a847a;
+  --home-line: #d9d0c3;
+  background: var(--home-black);
+  color: var(--home-black);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body[data-page="inicio"] .sheet { width: 100%; max-width: none; margin: 0; border: 0; background: var(--home-black); }
+body[data-page="inicio"] h1, body[data-page="inicio"] h2, body[data-page="inicio"] h3 { letter-spacing: -.035em; }
+body[data-page="inicio"] a:focus-visible, body[data-page="inicio"] button:focus-visible, body[data-page="inicio"] summary:focus-visible { outline: 3px solid var(--home-gold); outline-offset: 4px; }
+body[data-page="inicio"] a:hover { text-decoration: none; }
+.home-container { width: min(100%, 1280px); margin-inline: auto; padding-inline: 48px; }
+.home-eyebrow { margin: 0 0 14px; color: #8a5a00; font-size: 12px; font-weight: 700; line-height: 1.4; letter-spacing: .17em; text-transform: uppercase; }
+.home-hero .home-eyebrow, .home-story .home-eyebrow, .home-gallery .home-eyebrow { color: var(--home-gold); }
+.home-light { background: var(--home-paper); }
+.home-section-heading { margin-bottom: 34px; }
+.home-section-heading h2, .home-story h2, .home-gallery h2, .home-testimonials h2, .home-final h2 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; }
+.home-section-heading h2 { margin: 0; font-size: clamp(40px, 4vw, 52px); line-height: 1.11; }
+.home-section-heading em, .home-hero em, .home-story em, .home-gallery em { color: var(--home-gold); font-style: normal; }
+.home-heading-with-aside { display: flex; align-items: end; justify-content: space-between; gap: 48px; }
+.home-heading-aside { max-width: 275px; padding-bottom: 5px; }
+.home-heading-aside p { margin: 0 0 14px; color: #5a554c; font-size: 14px; line-height: 1.55; }
+.home-inline-link { display: inline-flex; gap: 12px; align-items: center; padding-bottom: 4px; border-bottom: 1px solid currentColor; color: var(--home-black); font-size: 13px; font-weight: 700; }
+.home-inline-link:hover { color: #a37300; }
+
+/* Header and brand */
+.home-header { position: relative; z-index: 5; background: var(--home-black); color: var(--home-white); }
+.home-header-inner { display: flex; align-items: center; min-height: 92px; gap: 36px; }
+.home-brand { display: flex; align-items: center; justify-content: center; flex-direction: column; flex: none; width: 162px; color: var(--home-gold); line-height: 1; }
+.home-brand svg { margin-bottom: 4px; }
+.home-brand span { font-family: Georgia, serif; font-size: 22px; letter-spacing: .11em; }
+.home-brand small { margin-top: 4px; color: #b6a978; font-size: 8px; letter-spacing: .04em; }
+.home-desktop-nav { display: flex; align-items: center; justify-content: center; flex: 1; gap: clamp(18px, 2.3vw, 34px); }
+.home-desktop-nav a { display: flex; align-items: center; min-height: 44px; position: relative; color: var(--home-white); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.home-desktop-nav a:hover, .home-desktop-nav a[aria-current="page"] { color: var(--home-gold); }
+.home-desktop-nav a[aria-current="page"]::after { position: absolute; left: 0; bottom: 5px; width: 26px; height: 2px; background: var(--home-gold); content: ""; }
+.home-whatsapp-pill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 10px 21px; border-radius: 999px; background: var(--home-gold); color: var(--home-black); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background 220ms ease, transform 220ms ease; }
+.home-whatsapp-pill:hover { background: #ffdb5c; transform: translateY(-2px); }
+.home-mobile-menu { display: none; }
+
+/* Buttons */
+.home-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 10px 17px; border: 1px solid var(--home-gold); border-radius: 999px; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap; transition: background 220ms ease, color 220ms ease, transform 220ms ease; }
+.home-button:hover { transform: translateY(-2px); }
+.home-button-gold { background: var(--home-gold); color: var(--home-black); }
+.home-button-gold:hover { background: #ffdc62; }
+.home-button-outline { background: rgba(0,0,0,.18); color: var(--home-white); }
+.home-button-outline:hover { background: var(--home-gold); color: var(--home-black); }
+.home-button-arrow { margin-left: 4px; font-size: 17px; font-weight: 400; line-height: .8; }
+
+/* Hero */
+.home-hero { position: relative; display: flex; align-items: center; min-height: 640px; overflow: hidden; background: var(--home-black); color: var(--home-white); }
+.home-hero-image, .home-story > img, .home-final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.home-hero-image { object-position: center; }
+.home-hero-shade, .home-story-shade, .home-final-shade { position: absolute; inset: 0; pointer-events: none; }
+.home-hero-shade { background: linear-gradient(90deg, rgba(0,0,0,.36) 0%, rgba(0,0,0,.12) 44%, rgba(0,0,0,0) 78%); }
+.home-hero-content { position: relative; z-index: 1; width: 100%; padding-block: 80px; }
+.home-hero h1 { max-width: 690px; margin: 0 0 20px; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: clamp(58px, 5.2vw, 72px); font-weight: 700; line-height: 1.03; }
+.home-hero p:not(.home-eyebrow) { max-width: 495px; margin: 0; color: #e9e2d4; font-size: 19px; line-height: 1.48; }
+.home-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 29px; }
+
+/* Attribute and benefit strips */
+.home-attributes { background: var(--home-cream); }
+.home-attributes-grid, .home-benefits-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-attributes-grid { padding-block: 30px; }
+.home-attribute { display: flex; align-items: center; gap: 15px; min-height: 65px; padding: 3px 20px; border-right: 1px solid var(--home-line); }
+.home-attribute:first-child { padding-left: 0; }
+.home-attribute:last-child { border-right: 0; padding-right: 0; }
+.home-attribute svg { flex: none; color: var(--home-black); }
+.home-attribute h2, .home-benefit h2 { margin: 0 0 4px; font-family: Inter, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.25; letter-spacing: 0; }
+.home-attribute p, .home-benefit p { margin: 0; color: #5b554d; font-size: 13px; line-height: 1.38; }
+
+/* Courses */
+.home-courses { padding-block: 104px 114px; }
+.home-courses .home-section-heading em { color: #936700; }
+.home-course-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; grid-template-rows: 245px 245px; gap: 16px; }
+.home-course-card { position: relative; display: block; min-width: 0; overflow: hidden; padding: 0; border: 0; border-radius: 11px; background: var(--home-black); color: var(--home-white); text-align: left; isolation: isolate; cursor: pointer; }
+.home-course-card::after { position: absolute; inset: 25% 0 0; z-index: 1; background: linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.15) 68%, transparent); content: ""; pointer-events: none; }
+.home-course-card:hover .home-course-art, .home-course-card:focus-visible .home-course-art { transform: scale(1.04); }
+.home-course-piano { grid-row: span 2; }
+.home-course-guitarra { grid-column: span 2; }
+.home-course-art { position: absolute; inset: 0; display: block; background-image: url('assets/courses-sheet.png'); background-repeat: no-repeat; transition: transform 320ms ease; }
+.home-course-piano .home-course-art { background-size: auto 200%; background-position: 18% top; }
+.home-course-guitarra .home-course-art { background-size: 200% auto; background-position: right 8%; }
+.home-course-violin .home-course-art { background-size: 200% 200%; background-position: left bottom; }
+.home-course-canto .home-course-art { background-size: 200% 200%; background-position: right bottom; }
+.home-course-content { position: absolute; right: 25px; bottom: 23px; left: 25px; z-index: 2; display: flex; flex-direction: column; align-items: start; gap: 8px; }
+.home-course-content strong { font-family: "Playfair Display", Georgia, serif; font-size: clamp(26px, 2.6vw, 34px); font-weight: 700; line-height: 1.1; }
+.home-course-open { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 5px; border-bottom: 1px solid rgba(244,198,45,.85); color: var(--home-gold); font-size: 13px; font-weight: 700; letter-spacing: .03em; white-space: nowrap; }
+.home-course-open span { font-size: 18px; font-weight: 400; line-height: 1; }
+.home-course-hint { margin: 17px 0 0; color: #6c665c; font-size: 13px; }
+.home-course-dialog { width: min(850px, calc(100% - 32px)); max-height: calc(100dvh - 36px); margin: auto; padding: 0; overflow: auto; border: 1px solid #bbaf99; border-radius: 14px; background: var(--home-paper); color: var(--home-black); box-shadow: 0 26px 85px rgba(0,0,0,.38); }
+.home-course-dialog::backdrop { background: rgba(0,0,0,.78); }
+.home-course-dialog-layout { display: grid; grid-template-columns: 43% 57%; min-height: 510px; }
+.home-course-dialog-art { background-image: url('assets/courses-sheet.png'); background-repeat: no-repeat; }
+.home-course-dialog-piano { background-size: auto 200%; background-position: 18% top; }
+.home-course-dialog-guitarra { background-size: auto 200%; background-position: 82% top; }
+.home-course-dialog-violin { background-size: auto 200%; background-position: 18% bottom; }
+.home-course-dialog-canto { background-size: auto 200%; background-position: 82% bottom; }
+.home-course-dialog-body { position: relative; padding: 54px 42px 40px; }
+.home-course-dialog-close { position: absolute; top: 13px; right: 18px; width: 42px; height: 42px; padding: 0; border: 0; background: transparent; color: var(--home-black); font-size: 29px; font-weight: 300; }
+.home-course-dialog-close:hover { color: #936700; }
+.home-course-dialog-body h2 { margin: 0 0 14px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(38px, 4vw, 49px); }
+.home-course-dialog-description { margin-bottom: 28px; color: #4a4339; font-size: 17px; line-height: 1.5; }
+.home-course-dialog-body dl { margin: 0 0 28px; border-top: 1px solid var(--home-line); }
+.home-course-dialog-body dl div { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--home-line); }
+.home-course-dialog-body dt { color: #6c665c; font-size: 13px; }
+.home-course-dialog-body dd { margin: 0; font-size: 14px; font-weight: 600; }
+.home-course-dialog-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.home-course-dialog-contact { padding-bottom: 4px; border-bottom: 1px solid currentColor; color: var(--home-black); font-size: 13px; font-weight: 700; }
+.home-teacher-art { display: block; width: 100%; aspect-ratio: 1.34; background-repeat: no-repeat; background-size: 200% 200%; }
+.home-circle-arrow { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; margin-top: auto; border: 1px solid var(--home-gold); border-radius: 50%; color: var(--home-gold); font-size: 20px; line-height: 1; transition: background 220ms ease, color 220ms ease; }
+.home-teacher-card:hover .home-circle-arrow { background: var(--home-gold); color: var(--home-black); }
+
+/* Story */
+.home-story { position: relative; display: flex; align-items: center; min-height: 520px; overflow: hidden; background: var(--home-black); color: var(--home-white); }
+.home-story > img { object-position: center; }
+.home-story-shade { background: linear-gradient(90deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,.12) 52%, rgba(0,0,0,0) 85%); }
+.home-story-content { position: relative; z-index: 1; width: 100%; padding-block: 76px; }
+.home-story h2 { max-width: 600px; margin: 0 0 16px; font-size: clamp(45px, 4.7vw, 61px); line-height: 1.07; }
+.home-story p:not(.home-eyebrow) { max-width: 530px; margin-bottom: 23px; color: #ede5d8; font-size: 18px; line-height: 1.5; }
+
+.home-benefits { background: var(--home-cream); }
+.home-benefits-grid { padding-block: 66px; }
+.home-benefit { min-height: 176px; padding: 2px 30px; border-right: 1px solid var(--home-line); }
+.home-benefit:first-child { padding-left: 0; }
+.home-benefit:last-child { padding-right: 0; border-right: 0; }
+.home-benefit svg { margin-bottom: 22px; color: var(--home-amber); }
+.home-benefit h2 { max-width: 170px; font-size: 16px; }
+.home-benefit p { max-width: 180px; font-size: 14px; }
+
+/* Teachers */
+.home-teachers { padding-block: 105px 100px; }
+.home-teachers .home-section-heading h2 { max-width: 760px; }
+.home-teacher-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.home-teacher-card { min-width: 0; overflow: hidden; border-radius: 10px; background: var(--home-black); color: var(--home-white); transition: transform 240ms ease; }
+.home-teacher-card:hover { transform: translateY(-5px); }
+.home-teacher-art { background-image: url('assets/teachers-sheet.png'); }
+.home-teacher-piano .home-teacher-art { background-position: left top; }
+.home-teacher-violin .home-teacher-art { background-position: right top; }
+.home-teacher-guitarra .home-teacher-art { background-position: left bottom; }
+.home-teacher-canto .home-teacher-art { background-position: right bottom; }
+.home-teacher-content { position: relative; display: flex; flex-direction: column; min-height: 95px; padding: 17px 57px 18px 18px; }
+.home-teacher-content strong { margin-bottom: 5px; font-size: 16px; line-height: 1.2; }
+.home-teacher-content small { color: #d6cda9; font-size: 12px; }
+.home-teacher-content .home-circle-arrow { position: absolute; right: 14px; bottom: 18px; margin: 0; }
+.home-image-note { margin: 22px 0 0; color: #6c675f; font-size: 13px; }
+
+/* Gallery carousel */
+.home-gallery { padding-block: 79px; background: var(--home-black); color: var(--home-white); }
+.home-gallery-layout { display: grid; grid-template-columns: minmax(190px, 26%) minmax(0, 1fr); align-items: center; gap: 36px; }
+.home-gallery h2 { margin: 0 0 15px; font-size: clamp(38px, 4vw, 51px); line-height: 1.08; }
+.home-gallery-intro > p:not(.home-eyebrow) { max-width: 250px; margin: 0 0 22px; color: #d5cec2; font-size: 15px; line-height: 1.48; }
+.home-gallery-frame { min-width: 0; }
+.home-gallery-track { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.home-gallery-track::-webkit-scrollbar { display: none; }
+.home-gallery-slide { flex: 0 0 calc((100% - 18px) / 2); aspect-ratio: .9; min-width: 0; border-radius: 9px; background-color: #211c17; background-repeat: no-repeat; background-position: center; background-size: cover; scroll-snap-align: start; }
+.home-gallery-class { background-image: url('assets/community.png'); background-position: 75% center; }
+.home-gallery-violin { background-image: url('assets/hero-violin.png'); background-position: 78% center; }
+.home-gallery-piano { background-image: url('assets/courses-sheet.png'); background-size: 200% 200%; background-position: left top; }
+.home-gallery-voice { background-image: url('assets/teachers-sheet.png'); background-size: 200% 200%; background-position: right bottom; }
+.home-gallery-music { background-image: url('assets/final-cta.png'); background-position: 78% center; }
+.home-gallery-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
+.home-gallery-arrow { width: 42px; height: 42px; border: 1px solid var(--home-gold); border-radius: 50%; background: transparent; color: var(--home-gold); font-size: 23px; line-height: 1; }
+.home-gallery-arrow:hover { background: var(--home-gold); color: var(--home-black); }
+.home-gallery-dots { display: flex; align-items: center; gap: 9px; }
+.home-gallery-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #80765d; }
+.home-gallery-dot.is-active { background: var(--home-gold); }
+@media (min-width: 640px) { .home-gallery-dot:nth-child(n+5) { display: none; } }
+
+/* Testimonial area intentionally awaits confirmed stories */
+.home-testimonials { padding-block: 88px; }
+.home-testimonials-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; }
+.home-testimonials h2 { max-width: 500px; margin: 0; font-size: clamp(38px, 3.8vw, 50px); line-height: 1.13; }
+.home-testimonials-message { display: grid; grid-template-columns: 54px 1fr; column-gap: 12px; align-items: start; max-width: 560px; }
+.home-testimonials-message > span { color: var(--home-amber); font-family: Georgia, serif; font-size: 88px; line-height: .85; }
+.home-testimonials-message p { margin: 5px 0 10px; color: #3a342b; font-family: Georgia, serif; font-size: 21px; line-height: 1.42; }
+.home-testimonials-message small { grid-column: 2; color: #6c665c; font-size: 13px; }
+
+/* Final call to action and footer */
+.home-final { position: relative; display: flex; align-items: center; min-height: 475px; overflow: hidden; background: var(--home-black); color: var(--home-white); }
+.home-final > img { object-position: center; }
+.home-final-shade { background: linear-gradient(90deg, rgba(0,0,0,.33) 0%, rgba(0,0,0,.10) 55%, rgba(0,0,0,0) 100%); }
+.home-final-content { position: relative; z-index: 1; width: 100%; padding-block: 70px; }
+.home-final-content > svg { margin-bottom: 16px; color: var(--home-gold); }
+.home-final h2 { max-width: 630px; margin: 0 0 17px; font-size: clamp(44px, 4.5vw, 59px); line-height: 1.1; }
+.home-final p { max-width: 480px; margin: 0 0 26px; color: #eee5d6; font-size: 18px; line-height: 1.5; }
+.home-footer { padding-block: 44px 18px; border-top: 1px solid #3d372c; background: var(--home-black); color: var(--home-white); }
+.home-footer-inner { display: flex; align-items: center; gap: 75px; }
+.home-footer .home-brand { width: 170px; }
+.home-footer-main { flex: 1; }
+.home-footer-main nav { display: flex; flex-wrap: wrap; gap: 27px; margin-bottom: 28px; }
+.home-footer-main nav a { color: var(--home-white); font-size: 13px; }
+.home-footer-main nav a:first-child, .home-footer-main nav a:hover { color: var(--home-gold); }
+.home-footer-details { display: flex; flex-wrap: wrap; gap: 18px 30px; }
+.home-footer-details span { display: inline-flex; align-items: center; gap: 7px; color: #cfc7b6; font-size: 12px; }
+.home-footer-details svg { color: var(--home-gold); }
+.home-footer-bottom { display: flex; justify-content: space-between; gap: 20px; margin-top: 42px; padding-top: 16px; border-top: 1px solid #302d28; color: #948d7e; font-size: 11px; }
+
+@media (max-width: 1024px) {
+  .home-container { padding-inline: 32px; }
+  .home-header-inner { gap: 20px; }
+  .home-brand { width: 130px; }
+  .home-brand span { font-size: 18px; }
+  .home-desktop-nav { gap: 16px; }
+  .home-desktop-nav a { font-size: 12px; }
+  .home-whatsapp-pill { padding-inline: 15px; font-size: 12px; }
+  .home-hero { min-height: 575px; }
+  .home-hero h1 { font-size: clamp(52px, 5.8vw, 61px); }
+  .home-attribute { gap: 10px; padding-inline: 12px; }
+  .home-attribute h2 { font-size: 13px; }
+  .home-attribute p { font-size: 12px; }
+  .home-course-grid, .home-teacher-grid { gap: 16px; }
+  .home-course-grid { grid-template-rows: 225px 225px; }
+  .home-course-content { right: 18px; bottom: 18px; left: 18px; }
+  .home-course-content strong { font-size: 26px; }
+  .home-benefit { padding-inline: 18px; }
+  .home-gallery-layout { grid-template-columns: 31% 1fr; gap: 26px; }
+}
+
+@media (max-width: 760px) {
+  .home-header-inner { min-height: 78px; }
+  .home-desktop-nav { display: none; }
+  .home-brand { margin-right: auto; }
+  .home-mobile-menu { display: block; position: relative; }
+  .home-mobile-menu summary { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 46px; height: 46px; padding: 11px; border: 1px solid #766b48; border-radius: 50%; cursor: pointer; list-style: none; }
+  .home-mobile-menu summary::-webkit-details-marker { display: none; }
+  .home-mobile-menu summary span { display: block; width: 21px; height: 2px; background: var(--home-gold); }
+  .home-mobile-nav { position: absolute; top: calc(100% + 12px); right: 0; z-index: 10; display: grid; min-width: 220px; padding: 9px; border: 1px solid #655a40; border-radius: 9px; background: var(--home-dark); box-shadow: 0 14px 30px rgba(0,0,0,.3); }
+  .home-mobile-nav a { padding: 12px 13px; border-bottom: 1px solid #3b3529; color: var(--home-white); font-size: 14px; }
+  .home-mobile-nav a:last-child { border-bottom: 0; }
+  .home-mobile-nav a[aria-current="page"] { color: var(--home-gold); }
+  .home-attributes-grid, .home-benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-attribute:nth-child(2), .home-benefit:nth-child(2) { border-right: 0; }
+  .home-attribute:nth-child(-n+2), .home-benefit:nth-child(-n+2) { border-bottom: 1px solid var(--home-line); }
+  .home-attribute { padding: 14px !important; }
+  .home-benefit { padding: 20px !important; }
+  .home-course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 245px 205px 210px; gap: 16px; }
+  .home-course-piano { grid-column: 1; grid-row: 1 / span 2; }
+  .home-course-guitarra { grid-column: 2; grid-row: 1; }
+  .home-course-violin { grid-column: 2; grid-row: 2; }
+  .home-course-canto { grid-column: 1 / span 2; grid-row: 3; }
+  .home-teacher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .home-gallery-layout { grid-template-columns: 1fr; gap: 28px; }
+  .home-gallery-intro { max-width: 440px; }
+  .home-gallery-slide { flex-basis: calc((100% - 18px) / 2); }
+  .home-footer-inner { align-items: start; gap: 35px; }
+}
+
+@media (max-width: 639px) {
+  body[data-page="inicio"] { font-size: 16px; }
+  .home-container { padding-inline: 20px; }
+  .home-header-inner { gap: 10px; min-height: 72px; }
+  .home-brand { width: 108px; }
+  .home-brand svg { width: 25px; height: 25px; }
+  .home-brand span { font-size: 15px; }
+  .home-brand small { font-size: 6px; }
+  .home-whatsapp-pill { min-height: 44px; padding: 9px 12px; font-size: 0; }
+  .home-whatsapp-pill svg { width: 21px; height: 21px; }
+  .home-mobile-menu summary { width: 44px; height: 44px; }
+  .home-hero { align-items: start; flex-direction: column; min-height: 0; }
+  .home-hero-image { position: relative; order: 2; width: 100%; height: 330px; object-position: 72% center; }
+  .home-hero-shade { display: none; }
+  .home-hero-content { order: 1; padding-block: 63px 40px; }
+  .home-hero h1 { font-size: clamp(40px, 10vw, 46px); line-height: 1.07; }
+  .home-hero p:not(.home-eyebrow) { font-size: 17px; }
+  .home-hero-actions { gap: 10px; }
+  .home-hero-actions .home-button { width: auto; max-width: 100%; }
+  .home-attributes-grid { padding-block: 18px; }
+  .home-attribute { min-height: 92px; gap: 9px; }
+  .home-attribute svg { width: 25px; height: 25px; }
+  .home-attribute h2 { font-size: 13px; }
+  .home-attribute p { font-size: 11px; }
+  .home-courses { padding-block: 70px 79px; }
+  .home-heading-with-aside { display: block; }
+  .home-section-heading h2 { font-size: clamp(31px, 8vw, 36px); }
+  .home-heading-aside { max-width: 450px; margin-top: 17px; }
+  .home-heading-aside p { font-size: 14px; }
+  .home-course-grid { grid-template-columns: 1fr; grid-template-rows: 320px 235px 235px 260px; gap: 14px; }
+  .home-course-card { grid-column: 1 !important; grid-row: auto !important; }
+  .home-course-content { right: 22px; bottom: 22px; left: 22px; }
+  .home-course-content strong { font-size: 29px; }
+  .home-teacher-grid { grid-template-columns: 1fr; gap: 18px; }
+  .home-course-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .home-course-dialog-layout { grid-template-columns: 1fr; }
+  .home-course-dialog-art { min-height: 180px; }
+  .home-course-dialog-body { padding: 30px 24px 28px; }
+  .home-course-dialog-body h2 { font-size: 38px; }
+  .home-course-dialog-close { top: 6px; right: 8px; }
+  .home-story { min-height: 0; flex-direction: column; }
+  .home-story > img { position: relative; order: 2; height: 280px; object-position: 72% center; }
+  .home-story-shade { display: none; }
+  .home-story-content { order: 1; padding-block: 66px 43px; }
+  .home-story h2 { font-size: clamp(36px, 9vw, 44px); }
+  .home-story p:not(.home-eyebrow) { font-size: 17px; }
+  .home-benefits-grid { padding-block: 20px; }
+  .home-benefit { min-height: 184px; }
+  .home-benefit svg { width: 34px; height: 34px; margin-bottom: 14px; }
+  .home-benefit h2 { font-size: 14px; }
+  .home-benefit p { font-size: 12px; }
+  .home-teachers { padding-block: 70px; }
+  .home-teacher-content { min-height: 90px; }
+  .home-gallery { padding-block: 64px; }
+  .home-gallery h2 { font-size: 37px; }
+  .home-gallery-slide { flex-basis: 78%; }
+  .home-testimonials { padding-block: 70px; }
+  .home-testimonials-layout { grid-template-columns: 1fr; gap: 30px; }
+  .home-testimonials h2 { font-size: 35px; }
+  .home-testimonials-message p { font-size: 18px; }
+  .home-final { flex-direction: column; min-height: 0; }
+  .home-final > img { position: relative; order: 2; height: 270px; object-position: 75% center; }
+  .home-final-shade { display: none; }
+  .home-final-content { order: 1; padding-block: 66px 46px; }
+  .home-final h2 { font-size: 40px; }
+  .home-final p { font-size: 17px; }
+  .home-final .home-button { width: auto; max-width: 100%; }
+  .home-footer { padding-block: 44px 18px; }
+  .home-footer-inner { display: block; }
+  .home-footer .home-brand { margin: 0 0 36px; }
+  .home-footer-main nav { gap: 16px 22px; margin-bottom: 26px; }
+  .home-footer-details { display: grid; gap: 13px; }
+  .home-footer-bottom { display: grid; margin-top: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="inicio"] *, body[data-page="inicio"] *::before, body[data-page="inicio"] *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
