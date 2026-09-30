@@ -632,3 +632,21 @@ body[data-page="inicio"] a:hover { text-decoration: none; }
     grid-column: auto;
   }
 }
+
+
+/* Iconos semánticos en la experiencia Prodigios */
+.home-experience-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+  border: 1px solid #d7c79c;
+  border-radius: 50%;
+  color: #936700 !important;
+}
+.home-experience-icon svg {
+  width: 20px;
+  height: 20px;
+}
