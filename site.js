@@ -146,6 +146,6 @@ document.querySelectorAll('.filter-button').forEach(filter => {
 
 document.getElementById('contact-form')?.addEventListener('submit', event => {
   event.preventDefault();
-  document.getElementById('form-note').textContent = 'El formulario todavía no está conectado. Para una consulta inmediata, usa WhatsApp.';
+  document.getElementById('form-note').textContent = 'El formulario todavía no está conectado al canal definitivo de recepción.';
 });
 
