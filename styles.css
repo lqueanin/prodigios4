@@ -968,3 +968,24 @@ body[data-page="contacto"] .home-mobile-nav a[aria-current="page"] {
     border-bottom: 0;
   }
 }
+
+
+.courses-grid-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 22px;
+}
+.courses-grid-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .courses-grid-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
