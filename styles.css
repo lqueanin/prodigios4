@@ -1056,3 +1056,26 @@ body[data-page="contacto"] .contact-map-card iframe {
     aspect-ratio: 16 / 10;
   }
 }
+
+
+/* Ajuste de ritmo vertical entre Contacto y FAQ */
+body[data-page="contacto"] .contact-main {
+  padding-bottom: 0;
+}
+
+/* Iconos semánticos en la guía previa al formulario */
+.contact-help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+  border: 1px solid #d7c79c;
+  border-radius: 50%;
+  color: #936700 !important;
+}
+.contact-help-icon svg {
+  width: 20px;
+  height: 20px;
+}
