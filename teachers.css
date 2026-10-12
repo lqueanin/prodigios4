@@ -1,0 +1,125 @@
+/* Profesores uses the same Prodigios palette, typography, and shared UI. */
+body[data-page="profesores"] {
+  --home-black: #090a09;
+  --home-dark: #11110f;
+  --home-cream: #f4ebdd;
+  --home-paper: #fbf7ef;
+  --home-gold: #f4c62d;
+  --home-amber: #d69c1e;
+  --home-white: #fffdf7;
+  --home-muted: #8a847a;
+  --home-line: #d9d0c3;
+  --teachers-copy: #5a5146;
+  background: var(--home-black);
+  color: var(--home-black);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+body[data-page="profesores"] .sheet { width: 100%; max-width: none; margin: 0; border: 0; background: var(--home-paper); }
+body[data-page="profesores"] a:hover { text-decoration: none; }
+body[data-page="profesores"] :is(a, button, summary):focus-visible { outline: 3px solid var(--home-gold); outline-offset: 4px; }
+body[data-page="profesores"] .teachers-team a:focus-visible { outline-color: #765300; }
+body[data-page="profesores"] main h1,
+body[data-page="profesores"] main h2 { margin: 0; font-family: "Playfair Display", Georgia, serif; font-weight: 700; letter-spacing: -.035em; }
+body[data-page="profesores"] main h2 { font-size: clamp(40px, 3.8vw, 50px); line-height: 1.15; }
+body[data-page="profesores"] main em { color: var(--home-gold); font-style: normal; }
+.teachers-skip-link { position: fixed; z-index: 20; top: 12px; left: 20px; padding: 12px 18px; border-radius: 8px; background: var(--home-gold); color: var(--home-black); clip-path: inset(50%); transform: translateY(-160%); }
+.teachers-skip-link:focus { clip-path: none; transform: translateY(0); }
+.teachers-text-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; border-bottom: 1px solid currentColor; font-size: 14px; font-weight: 600; transition: color 220ms ease; }
+.teachers-text-link:hover { color: var(--home-gold); }
+.teachers-text-link span { font-size: 17px; }
+
+/* Portraits keep their original proportions and crop only their own quadrant. */
+.teachers-photo { position: relative; margin: 0; overflow: hidden; background: #171612; }
+.teachers-photo img { position: absolute; top: 0; left: 50%; width: auto; max-width: none; height: 202%; transform: translateX(-25%); }
+.teachers-photo:is(.teachers-photo-violin, .teachers-photo-canto) img { transform: translateX(-75%); }
+.teachers-photo:is(.teachers-photo-guitarra, .teachers-photo-canto) img { top: -102%; }
+
+.teachers-hero { background: var(--home-black); color: var(--home-white); }
+.teachers-hero-layout { display: grid; grid-template-columns: minmax(0, .98fr) minmax(0, 1.05fr); align-items: center; gap: 64px; padding-block: 72px 88px; }
+.teachers-hero .home-eyebrow, .teachers-support .home-eyebrow { color: var(--home-gold); }
+body[data-page="profesores"] .teachers-hero h1 { margin-bottom: 24px; font-size: clamp(58px, 5.1vw, 70px); line-height: 1.08; }
+.teachers-hero-copy > p:not(.home-eyebrow) { max-width: 475px; margin: 0; color: #e1d8cb; font-size: 18px; line-height: 1.7; }
+.teachers-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 28px; }
+.teachers-hero .teachers-photo { aspect-ratio: 1.22; border-radius: 12px; }
+
+.teachers-team { padding-block: 94px 90px; background: var(--home-paper); scroll-margin-top: 24px; }
+.teachers-team-heading { display: flex; align-items: end; justify-content: space-between; gap: 64px; margin-bottom: 36px; }
+body[data-page="profesores"] .teachers-team em { color: #936700; }
+.teachers-team-heading > p { max-width: 340px; margin: 0 0 5px; color: var(--teachers-copy); font-size: 16px; line-height: 1.7; }
+.teachers-profile-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.teachers-profile { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid #28251f; border-radius: 12px; background: var(--home-black); color: var(--home-white); transition: transform 240ms ease, border-color 240ms ease; }
+.teachers-profile:hover { transform: translateY(-4px); border-color: #9b8247; }
+.teachers-profile .teachers-photo { aspect-ratio: .88; }
+.teachers-profile-info { display: flex; flex: 1; flex-direction: column; padding: 22px 20px 18px; }
+.teachers-profile h3 { margin: 0 0 10px; font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: 0; }
+.teachers-profile-info > p { margin: 0 0 20px; color: #c5bcad; font-size: 16px; line-height: 1.6; }
+.teachers-profile-action { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; color: #eee4d1; font-size: 14px; font-weight: 600; }
+.teachers-profile-arrow { display: flex; align-items: center; justify-content: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid #76623b; border-radius: 50%; color: var(--home-gold); transition: background 220ms ease, color 220ms ease; }
+.teachers-profile:hover .teachers-profile-arrow,
+.teachers-profile:focus-visible .teachers-profile-arrow { background: var(--home-gold); color: var(--home-black); }
+
+.teachers-support { padding-block: 96px 100px; background: var(--home-dark); color: var(--home-white); }
+.teachers-support-layout { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(0, .97fr); align-items: center; gap: 76px; }
+body[data-page="profesores"] .teachers-support h2 { margin-bottom: 24px; font-size: clamp(38px, 3.4vw, 46px); }
+.teachers-support-copy > p:not(.home-eyebrow) { max-width: 515px; margin-bottom: 28px; color: #d3c9b9; font-size: 17px; line-height: 1.7; }
+.teachers-support-list { margin: 0 0 28px; padding: 0; list-style: none; }
+.teachers-support-list li { display: flex; align-items: flex-start; gap: 20px; padding-block: 19px; border-top: 1px solid #403a2f; }
+.teachers-support-icon { display: flex; flex: 0 0 28px; margin-top: 3px; color: var(--home-gold); }
+.teachers-support-list h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.4; letter-spacing: 0; }
+.teachers-support-list p { margin: 0; color: #bfb5a5; font-size: 16px; line-height: 1.65; }
+.teachers-support-photo { position: relative; align-self: stretch; min-height: 620px; margin: 0; overflow: hidden; border-radius: 12px; background: #171612; }
+.teachers-support-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 95% center; }
+
+@media (max-width: 1024px) {
+  .teachers-hero-layout { gap: 36px; padding-block: 60px 72px; }
+  body[data-page="profesores"] .teachers-hero h1 { font-size: clamp(48px, 5.5vw, 60px); }
+  .teachers-hero-copy > p:not(.home-eyebrow) { font-size: 17px; }
+  .teachers-hero .teachers-photo { aspect-ratio: 1; }
+  .teachers-team { padding-block: 76px 72px; }
+  .teachers-team-heading { gap: 36px; }
+  .teachers-profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .teachers-profile .teachers-photo { aspect-ratio: 1.05; }
+  .teachers-profile-info { padding: 24px; }
+  .teachers-profile h3 { font-size: 20px; }
+  .teachers-support-layout { gap: 38px; }
+  body[data-page="profesores"] .teachers-support h2 { font-size: 38px; }
+}
+
+@media (max-width: 760px) {
+  .teachers-hero-layout { grid-template-columns: 1fr; gap: 36px; padding-block: 52px 60px; }
+  .teachers-hero-copy { max-width: 590px; }
+  body[data-page="profesores"] .teachers-hero h1 { font-size: 56px; }
+  .teachers-hero .teachers-photo { aspect-ratio: 1.25; }
+  .teachers-team-heading { display: block; }
+  .teachers-team-heading > p { max-width: 480px; margin-top: 22px; }
+  .teachers-profile-info { padding: 22px 20px 18px; }
+  .teachers-support { padding-block: 72px; }
+  .teachers-support-layout { grid-template-columns: 1fr; gap: 38px; }
+  .teachers-support-photo { min-height: 0; aspect-ratio: 1.25; }
+}
+
+@media (max-width: 639px) {
+  .teachers-hero-layout { padding-block: 44px 48px; gap: 32px; }
+  .teachers-hero .home-eyebrow { font-size: 11px; }
+  body[data-page="profesores"] .teachers-hero h1 { margin-bottom: 22px; font-size: clamp(40px, 10.7vw, 46px); }
+  .teachers-hero-actions { gap: 16px; margin-top: 24px; }
+  .teachers-team { padding-block: 60px 56px; }
+  body[data-page="profesores"] main h2 { font-size: 34px; }
+  .teachers-team-heading { margin-bottom: 28px; }
+  .teachers-team-heading > p { margin-top: 20px; }
+  .teachers-profile-grid { grid-template-columns: 1fr; gap: 24px; }
+  .teachers-profile .teachers-photo { aspect-ratio: 1.08; }
+  .teachers-profile-info { padding: 24px; }
+  .teachers-profile h3 { font-size: 20px; }
+  .teachers-support { padding-block: 60px; }
+  body[data-page="profesores"] .teachers-support h2 { font-size: 34px; }
+  .teachers-support-copy > p:not(.home-eyebrow) { font-size: 16px; }
+  .teachers-support-list li { gap: 16px; }
+  .teachers-support .home-button { width: 100%; max-width: 360px; }
+  .teachers-support-photo { aspect-ratio: 1.18; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="profesores"] *, body[data-page="profesores"] *::before, body[data-page="profesores"] *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+}

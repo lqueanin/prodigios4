@@ -1,4 +1,4 @@
-body[data-page="inicio"] {
+body:is([data-page="inicio"], [data-page="cursos"]) {
   --home-black: #090a09;
   --home-dark: #11110f;
   --home-cream: #f4ebdd;
@@ -14,10 +14,10 @@ body[data-page="inicio"] {
   font-size: 16px;
 }
 
-body[data-page="inicio"] .sheet { width: 100%; max-width: none; margin: 0; border: 0; background: var(--home-black); }
-body[data-page="inicio"] h1, body[data-page="inicio"] h2, body[data-page="inicio"] h3 { letter-spacing: -.035em; }
-body[data-page="inicio"] a:focus-visible, body[data-page="inicio"] button:focus-visible, body[data-page="inicio"] summary:focus-visible { outline: 3px solid var(--home-gold); outline-offset: 4px; }
-body[data-page="inicio"] a:hover { text-decoration: none; }
+body:is([data-page="inicio"], [data-page="cursos"]) .sheet { width: 100%; max-width: none; margin: 0; border: 0; background: var(--home-black); }
+body:is([data-page="inicio"], [data-page="cursos"]) h1, body:is([data-page="inicio"], [data-page="cursos"]) h2, body:is([data-page="inicio"], [data-page="cursos"]) h3 { letter-spacing: -.035em; }
+body:is([data-page="inicio"], [data-page="cursos"]) a:focus-visible, body:is([data-page="inicio"], [data-page="cursos"]) button:focus-visible, body:is([data-page="inicio"], [data-page="cursos"]) summary:focus-visible { outline: 3px solid var(--home-gold); outline-offset: 4px; }
+body:is([data-page="inicio"], [data-page="cursos"]) a:hover { text-decoration: none; }
 .home-container { width: min(100%, 1280px); margin-inline: auto; padding-inline: 48px; }
 .home-eyebrow { margin: 0 0 14px; color: #8a5a00; font-size: 12px; font-weight: 700; line-height: 1.4; letter-spacing: .17em; text-transform: uppercase; }
 .home-hero .home-eyebrow, .home-story .home-eyebrow, .home-gallery .home-eyebrow { color: var(--home-gold); }
@@ -199,7 +199,7 @@ body[data-page="inicio"] a:hover { text-decoration: none; }
 .home-footer-main { flex: 1; }
 .home-footer-main nav { display: flex; flex-wrap: wrap; gap: 27px; margin-bottom: 28px; }
 .home-footer-main nav a { color: var(--home-white); font-size: 13px; }
-.home-footer-main nav a:first-child, .home-footer-main nav a:hover { color: var(--home-gold); }
+.home-footer-main nav a[aria-current="page"], .home-footer-main nav a:hover { color: var(--home-gold); }
 .home-footer-details { display: flex; flex-wrap: wrap; gap: 18px 30px; }
 .home-footer-details span { display: inline-flex; align-items: center; gap: 7px; color: #cfc7b6; font-size: 12px; }
 .home-footer-details svg { color: var(--home-gold); }

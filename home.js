@@ -28,7 +28,9 @@ const homeIcon = (name, size = 32) => {
 
 const homeBrand = () => `<a class="home-brand" href="index.html" aria-label="Academia de Música Prodigios, ir al inicio">${homeIcon('note', 35)}<span>PRODIGIOS</span><small>tu academia, tu música</small></a>`;
 const homeButton = (label, href, variant = 'gold', icon = '') => `<a class="home-button home-button-${variant}" href="${href}">${icon ? homeIcon(icon, 18) : ''}<span>${label}</span><span class="home-button-arrow" aria-hidden="true">→</span></a>`;
-const homeNav = (className) => `<nav class="${className}" aria-label="Navegación principal">${homePages.map(([label, href], i) => `<a href="${href}" ${i === 0 ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav>`;
+const homeIsCurrentPage = href => href === (document.body.dataset.page === 'inicio' ? 'index.html' : `${document.body.dataset.page}.html`);
+const homeNav = (className) => `<nav class="${className}" aria-label="Navegación principal">${homePages.map(([label, href]) => `<a href="${href}" ${homeIsCurrentPage(href) ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav>`;
+window.prodigiosCourses = homeCourses;
 
 window.prodigiosHomeHeader = () => `<header class="home-header"><div class="home-container home-header-inner">${homeBrand()}${homeNav('home-desktop-nav')}<a class="home-whatsapp-pill" href="contacto.html#whatsapp">${homeIcon('whatsapp', 19)}<span>WhatsApp</span></a><details class="home-mobile-menu"><summary aria-label="Abrir menú"><span></span><span></span><span></span></summary>${homeNav('home-mobile-nav')}</details></div></header>`;
 
@@ -75,7 +77,7 @@ window.prodigiosHomeContent = () => {
   <section class="home-final" aria-labelledby="home-final-title"><img src="assets/final-cta.png" alt="Partitura abierta junto a un piano en un aula de música" loading="lazy"><div class="home-final-shade"></div><div class="home-container home-final-content">${homeIcon('note', 54)}<h2 id="home-final-title">¿Listo para comenzar<br>tu camino musical?</h2><p>Escríbenos y te ayudaremos a encontrar el curso ideal para ti o tu familia.</p>${homeButton('Escríbenos por WhatsApp', 'contacto.html#whatsapp', 'gold', 'whatsapp')}</div></section>`;
 };
 
-window.prodigiosHomeFooter = () => `<footer class="home-footer"><div class="home-container home-footer-inner">${homeBrand()}<div class="home-footer-main"><nav aria-label="Navegación secundaria">${homePages.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</nav><div class="home-footer-details"><span>${homeIcon('pin', 18)} Tacna, Perú · dirección por confirmar</span><span>${homeIcon('whatsapp', 18)} Número por confirmar</span><span>Horario por confirmar</span><span>Redes sociales por confirmar</span></div></div></div><div class="home-container home-footer-bottom"><span>© Academia de Música Prodigios</span><span>Imágenes ilustrativas para esta propuesta visual</span></div></footer>`;
+window.prodigiosHomeFooter = () => window.prodigiosFooter();
 
 let homeGalleryIndex = 0;
 const setHomeGalleryActive = index => {
