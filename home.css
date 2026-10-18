@@ -166,7 +166,7 @@ body:is([data-page="inicio"], [data-page="cursos"]) a:hover { text-decoration: n
 .home-gallery-class { background-image: url('assets/community.png'); background-position: 75% center; }
 .home-gallery-violin { background-image: url('assets/hero-violin.png'); background-position: 78% center; }
 .home-gallery-piano { background-image: url('assets/courses-sheet.png'); background-size: 200% 200%; background-position: left top; }
-.home-gallery-voice { background-image: url('assets/teachers-sheet.png'); background-size: 200% 200%; background-position: right bottom; }
+.home-gallery-voice { background-image: url('assets/fotos-reales/galeria-violin-canto-sheet.png'); background-size: 200% 200%; background-position: right bottom; }
 .home-gallery-music { background-image: url('assets/final-cta.png'); background-position: 78% center; }
 .home-gallery-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
 .home-gallery-arrow { width: 42px; height: 42px; border: 1px solid var(--home-gold); border-radius: 50%; background: transparent; color: var(--home-gold); font-size: 23px; line-height: 1; }

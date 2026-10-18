@@ -6,9 +6,9 @@ const galleryPhotos = [
   {id:'piano-detalle', title:'Entre teclas y notas', category:'instrumentos', src:'assets/courses-sheet.png', crop:[3,3,718,537], alt:'las manos de un pianista sobre las teclas'},
   {id:'voz-expresion', title:'Encontrar tu voz', category:'voz', src:'assets/courses-sheet.png', crop:[727,546,718,537], alt:'una cantante interpretando una canción ante un micrófono'},
   {id:'guitarra-detalle', title:'El ritmo de las cuerdas', category:'instrumentos', src:'assets/courses-sheet.png', crop:[727,3,718,537], alt:'las manos de un guitarrista practicando acordes'},
-  {id:'violin-interpretacion', title:'La expresión de un arco', category:'instrumentos', src:'assets/teachers-sheet.png', crop:[727,3,718,537], alt:'una intérprete tocando una pieza de violín'},
+  {id:'violin-interpretacion', title:'La expresión de un arco', category:'instrumentos', src:'assets/fotos-reales/galeria-violin-canto-sheet.png', crop:[727,3,718,537], alt:'una intérprete tocando una pieza de violín'},
   {id:'partituras', title:'Tiempo de estudio', category:'instrumentos', src:'assets/final-cta.png', position:'83% center', alt:'una partitura abierta junto a un piano'},
-  {id:'canto-practica', title:'La voz y su expresión', category:'voz', src:'assets/teachers-sheet.png', crop:[727,546,718,537], alt:'una intérprete de canto practicando con un micrófono'}
+  {id:'canto-practica', title:'La voz y su expresión', category:'voz', src:'assets/fotos-reales/galeria-violin-canto-sheet.png', crop:[727,546,718,537], alt:'una intérprete de canto practicando con un micrófono'}
 ];
 const galleryFeatured = ['en-compania','violin-practica','voz-expresion'].map(id=>galleryPhotos.find(photo=>photo.id===id));
 
