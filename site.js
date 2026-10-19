@@ -63,10 +63,47 @@ function contact() {
 const content = { inicio: home, cursos: courses, nosotros: about, profesores: teachers, galeria: gallery, contacto: contact };
 document.getElementById('site').innerHTML = `<div class="sheet" id="top">${header()}<main id="main-content">${(content[page] || home)()}</main>${footer()}</div>`;
 
-document.getElementById('contact-form')?.addEventListener('submit', event => {
-  event.preventDefault();
-  document.getElementById('form-note').textContent = 'El formulario todavía no está conectado al canal definitivo de recepción.';
+// Conserva los componentes existentes y conecta sus accesos de WhatsApp.
+document.querySelectorAll('a[href]').forEach(link => {
+  const destination = new URL(link.getAttribute('href'), window.location.href);
+  if (destination.origin !== window.location.origin || !destination.pathname.endsWith('/contacto.html') || destination.hash !== '#whatsapp') return;
+  const course = destination.searchParams.get('curso');
+  link.href = course
+    ? prodigiosWhatsAppURL(`Hola, quisiera información sobre el curso de ${course}, sus horarios y disponibilidad.`)
+    : prodigiosWhatsAppURL();
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
 });
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  const nameInput = contactForm.elements.namedItem('nombre');
+  const phoneInput = contactForm.elements.namedItem('telefono');
+  [nameInput, phoneInput].forEach(input => input.addEventListener('input', () => input.setCustomValidity('')));
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    const name = String(data.get('nombre') || '').trim();
+    const phone = String(data.get('telefono') || '').trim();
+    const digits = phone.replace(/\D/g, '');
+    nameInput.setCustomValidity(name ? '' : 'Escribe tu nombre.');
+    phoneInput.setCustomValidity(/^[+\d\s().-]+$/u.test(phone) && digits.length >= 7 && digits.length <= 15
+      ? '' : 'Escribe un teléfono válido, incluyendo el código de país si corresponde.');
+    if (!contactForm.reportValidity()) return;
+    const course = String(data.get('curso') || '').trim() || 'Aún no lo sé';
+    const message = String(data.get('mensaje') || '').trim();
+    const lines = [
+      'Hola, quisiera información sobre las clases en Prodigios.',
+      '',
+      `Nombre: ${name}`,
+      `Teléfono: ${phone}`,
+      `Curso de interés: ${course}`
+    ];
+    if (message) lines.push('', `Mensaje: ${message}`);
+    document.getElementById('form-note').textContent = 'Abriendo WhatsApp. Revisa tu consulta y pulsa Enviar allí.';
+    window.location.assign(prodigiosWhatsAppURL(lines.join('\n')));
+  });
+}
 
 const requestedCourse = new URLSearchParams(window.location.search).get('curso');
 const courseSelect = document.querySelector('#contact-form select[name="curso"]');

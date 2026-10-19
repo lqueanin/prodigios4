@@ -1,4 +1,12 @@
 // Copied from lqueanin/prodigios4, branch mejora-home-uiux: site.js.
+const prodigiosContact = Object.freeze({
+  whatsapp: '51995522159',
+  facebook: 'https://www.facebook.com/AcademiadeMusicaProdigios',
+  tiktok: 'https://www.tiktok.com/@prodigios.academi'
+});
+const prodigiosWhatsAppURL = (message = 'Hola, quisiera información sobre los cursos y horarios de Prodigios.') =>
+  `https://wa.me/${prodigiosContact.whatsapp}?text=${encodeURIComponent(message)}`;
+
 const contactIcon = (name, size = 22) => {
   const paths = {
     note: '<path d="M9 17V4l11-2v13M9 8l11-2"/><ellipse cx="5.5" cy="18" rx="3.5" ry="2"/><ellipse cx="16.5" cy="16" rx="3.5" ry="2"/>',
@@ -17,5 +25,5 @@ window.prodigiosHeader = () => `<header class="home-header"><div class="home-con
 
 window.prodigiosFooter = () => {
   const contactLink = hash => document.body.dataset.page === 'contacto' ? hash : `contacto.html${hash}`;
-  return `<footer class="home-footer" aria-label="Pie de página"><div class="home-container home-footer-top"><div class="home-footer-intro">${contactBrand()}<p>Clases presenciales de piano, guitarra, violín y canto para niños, jóvenes y adultos en Tacna.</p><a class="home-button home-button-gold" href="${contactLink('#whatsapp')}">${contactIcon('whatsapp', 18)}<span>Consultar horarios</span><span class="home-button-arrow" aria-hidden="true">→</span></a></div><div class="home-footer-grid"><div class="home-footer-column"><h2>Navegación</h2><nav aria-label="Navegación secundaria">${pages.map(item => `<a href="${item.href}">${item.label}</a>`).join('')}</nav></div><div class="home-footer-column"><h2>Cursos</h2><nav aria-label="Cursos de Prodigios"><a href="cursos.html#piano">Piano</a><a href="cursos.html#guitarra">Guitarra</a><a href="cursos.html#violin">Violín</a><a href="cursos.html#canto">Canto</a></nav></div><div class="home-footer-column home-footer-contact"><h2>Contacto</h2><span>${contactIcon('pin', 17)} Tacna, Perú</span><a href="${contactLink('#whatsapp')}">${contactIcon('whatsapp', 17)} Escribir por WhatsApp</a><a href="${contactLink('#formulario')}">Formulario de contacto <span aria-hidden="true">↗</span></a></div></div></div><div class="home-container home-footer-bottom"><span>© Academia de Música Prodigios</span><span>Academia de música presencial · Tacna, Perú</span><a href="#top">Volver arriba ↑</a></div></footer>`;
+  return `<footer class="home-footer" aria-label="Pie de página"><div class="home-container home-footer-top"><div class="home-footer-intro">${contactBrand()}<p>Clases presenciales de piano, guitarra, violín y canto para niños, jóvenes y adultos en Tacna.</p><a class="home-button home-button-gold" href="${contactLink('#whatsapp')}">${contactIcon('whatsapp', 18)}<span>Consultar horarios</span><span class="home-button-arrow" aria-hidden="true">→</span></a></div><div class="home-footer-grid"><div class="home-footer-column"><h2>Navegación</h2><nav aria-label="Navegación secundaria">${pages.map(item => `<a href="${item.href}">${item.label}</a>`).join('')}</nav></div><div class="home-footer-column"><h2>Cursos</h2><nav aria-label="Cursos de Prodigios"><a href="cursos.html#piano">Piano</a><a href="cursos.html#guitarra">Guitarra</a><a href="cursos.html#violin">Violín</a><a href="cursos.html#canto">Canto</a></nav></div><div class="home-footer-column home-footer-contact"><h2>Contacto</h2><span>${contactIcon('pin', 17)} Tacna, Perú</span><a href="${contactLink('#whatsapp')}">${contactIcon('whatsapp', 17)} Escribir por WhatsApp</a><a href="${contactLink('#formulario')}">Formulario de contacto <span aria-hidden="true">↗</span></a></div></div></div><div class="home-container home-footer-bottom"><span>© Academia de Música Prodigios</span><span><a href="${prodigiosContact.facebook}" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="${prodigiosContact.tiktok}" target="_blank" rel="noopener noreferrer">TikTok</a></span><a href="#top">Volver arriba ↑</a></div></footer>`;
 };
